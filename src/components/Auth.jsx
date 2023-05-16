@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router";
 import { useSearchParams } from "react-router-dom";
 
 import axios from "axios";
@@ -8,6 +7,7 @@ const Auth = () => {
   const [searchParams] = useSearchParams();
   const code = searchParams.get("code");
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const form = new FormData();
   form.append("client_id", "777493744100016");
   form.append("client_secret", "33a284f5b252e346971ef45a5d58715f");
