@@ -1,12 +1,21 @@
-import './App.css';
+import { Route, Routes } from "react-router";
+import "./App.css";
+import Auth from "./components/Auth";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import { AuthContextProvider } from "./context/AuthContext";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-       <h1>Instagram API</h1>
-      </header>
-    </div>
+    <AuthContextProvider>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route path="/" Component={Home} />
+          <Route path="/auth" Component={Auth} />
+        </Routes>
+      </div>
+    </AuthContextProvider>
   );
 }
 
